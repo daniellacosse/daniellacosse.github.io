@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type">
+	<title>moving_object_test</title>
+  <!-- vendor -->
+  <script src="../../vendor/jquery-1.11.0.js"></script>
+  <script src="../../vendor/underscore.js"></script>
+	<script src="../../vendor/deepCopy.js"></script>
+  <script src="../../vendor/keymaster.js"></script>
+
+  <!-- lib - javascript: util -->
+  <script src="../util/inherit.js"></script>
+  <script src="../util/position.js"></script>
+  <script src="../util/vector.js"></script>
+	<script src="../util/impulse.js"></script>
+
+	<!-- lib - javascript: MovingObject -->
+	<script src="movingObject.js" ></script>
+
+	<script>
+		var pos1 = new _2D.Position(0, 0);
+		var vec1 = new _2D.Vector(2, 3);
+		var vec2 = new _2D.Vector(-1, -4);
+		var obj1 = new Asteroids.MovingObject({
+			pos: pos1,
+			vel: vec1,
+			radius: 3,
+			color: "white"
+		});
+
+		var obj2 = new Asteroids.MovingObject({
+			pos: pos1,
+			vel: vec2,
+			radius: 5,
+			color: "white"
+		});
+	</script>
+</head>
+<body>
+
+</body>
