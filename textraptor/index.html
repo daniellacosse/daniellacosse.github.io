@@ -13,35 +13,35 @@
 
 	/* generic custom classes */
 	.center {
-	    
+
 	    margin: auto;
 	    display: block;
-	    
+
 	}
 
 	.centerVert {
-	            
+
 	        display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
-	        display: -moz-box;      /* OLD: Firefox (buggy) */ 
+	        display: -moz-box;      /* OLD: Firefox (buggy) */
 	        display: -ms-flexbox;   /* MID: IE 10 */
 	        display: -webkit-flex;  /* NEW, Chrome 21+ */
 	        display: flex;          /* NEW: Opera 12.1, Firefox 22+ */
-	            
+
 	        -webkit-box-align: center; -moz-box-align: center; /* OLD… */
 	        -ms-flex-align: center; /* You know the drill now… */
 	        -webkit-align-items: center;
 	        align-items: center;
-	            
-	        -webkit-box-pack: center; -moz-box-pack: center; 
-	        -ms-flex-pack: center; 
+
+	        -webkit-box-pack: center; -moz-box-pack: center;
+	        -ms-flex-pack: center;
 	        -webkit-justify-content: center;
 	        justify-content: center;
-	            
+
 	        margin: 0;
 	        height: 100%;
 	        width: 100% /* needed for Firefox */
-	        
-	} 
+
+	}
 
 	.hidden { display: none; }
 
@@ -148,7 +148,7 @@
 	</style>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://da.niellacos.se/scripts/jquery.transit.min.js"></script>
+	<script src="jquery.transit.min.js"></script>
 
 </head>
 
@@ -176,10 +176,10 @@
 	</section>
 
 <script type="text/javascript">
-	
+
 	$("#area1").hide();
 	$("#area2").hide();
-	
+
 	var library = [{avgPcnt: 0, stdDev: 0}, {avgPcnt: 0, stdDev: 0}, {avgPcnt: 0, stdDev: 0}];
 
 	library[0].color = "#3a320e";
@@ -207,7 +207,7 @@
 		});
 
 		$("#area1").bind("input propertychange", function() {
-			
+
 			library[1].wrdCnt = countWordsFrom("area1", library[1].color);
 			library[1].avgPcnt = avgPercent(library[1].wrdCnt);
 			library[1].stdDev = stdDev(library[1].wrdCnt);
@@ -218,10 +218,10 @@
 		});
 
 		$("#area2").bind("input propertychange", function() {
-			
+
 			library[2].wrdCnt = countWordsFrom("area2", library[2].color);
 			library[2].avgPcnt = avgPercent(library[2].wrdCnt);
-			library[2].stdDev = stdDev(library[2].wrdCnt); 
+			library[2].stdDev = stdDev(library[2].wrdCnt);
 
 			updateStats();
 			updateGaussianCanv();
@@ -296,7 +296,7 @@
 	function createArrayfromString(str) {
 
 		var arr = str.split(" ");
-		
+
 		for (var i = 0; i < arr.length; i++){
 
 			if (arr[i] === "") arr.splice(i, 1);
@@ -310,11 +310,11 @@
 
 	function wordCount(arr, color) {
 
-	    var a = [], 
+	    var a = [],
 	    	prev;
 
 	    arr.sort();
-	    
+
 	    for ( var i = 0; i < arr.length; i++ ) {
 
 	        if ( arr[i] !== prev && i > 0) {
@@ -418,7 +418,7 @@
     function updateGaussianCanv() {
 
     	var avgMaxIndex = 0, avgMax = library[0].avgPcnt;
-    	
+
     	ctx = gaussianCanv.getContext("2d");
 
     	for( var i = 0; i < library.length; i++){
@@ -439,10 +439,10 @@
 
     	//console.log("max Percent: " + xScale);
 
-    	if (ctx !== null) { 
+    	if (ctx !== null) {
 
 	    	ctx.clearRect(0, 0, gaussianCanv.width, -gaussianCanv.height);
-	    	
+
 	    	ctx.save();
 	    	ctx.moveTo(0, -gaussianCanv.height);
 	    	ctx.lineTo(0, gaussianCanv.height);
@@ -482,7 +482,7 @@
 	    ctx.strokeStyle = color;
 	    ctx.lineWidth = 2;
 	    ctx.stroke();
-			
+
 		ctx.restore();
 
     }
