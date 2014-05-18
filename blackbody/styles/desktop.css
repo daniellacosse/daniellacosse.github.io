@@ -1,0 +1,335 @@
+/*generic classes*/
+
+.hidden { display: none; }
+
+.center { /* place on child element to horizontally center in parent */
+
+  display: block;
+  margin: 0 auto; 
+}
+
+.centerVert { /* place on parent element to perfectly center children */
+
+    display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+    display: -moz-box;      /* OLD: Firefox (buggy) */ 
+    display: -ms-flexbox;   /* MID: IE 10 */
+    display: -webkit-flex;  /* NEW, Chrome 21+ */
+    display: flex;          /* NEW: Opera 12.1, Firefox 22+ */
+
+    -webkit-box-align: center; 
+    -moz-box-align: center; /* OLD… */
+    -ms-box-align: center; /* OLD… */
+    -ms-flex-align: center; /* You know the drill now… */
+    -webkit-align-items: center;
+    align-items: center;
+                
+    -webkit-box-pack: center; 
+    -moz-box-pack: center;
+    -ms-box-pack: center;
+    -ms-flex-pack: center; 
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    margin: 0;
+    height: 100%;
+    width: 100%; /* needed for Firefox */
+}
+
+.fill-screen {
+
+    width: 100%; 
+    height: 100%;
+
+    position: fixed;
+    z-index: 2;
+}
+
+.background {
+
+    background-color: #999;
+    opacity: 0.88;
+}
+
+/*body, html, content*/
+body, html {
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+#content-wrapper { 
+
+    width: 300px;
+    height: 400px;
+
+    position: relative; 
+}
+
+#spectraGraph { /* since rotation isn't taken into account in the DOM flow, 
+                we have to reposition the canvas */
+
+    position: relative;
+    
+    top: 43px;
+    right: 35px;
+
+    -webkit-transform: rotate( 90deg );
+    -moz-transform: rotate( 90deg );
+    -ms-transform: rotate( 90deg );
+    -o-transform: rotate( 90deg );
+    transform: rotate( 90deg );
+}
+
+/*lightbox*/
+#tutorial-lightbox { /*---placeholder---*/ }
+
+#tutorial-content {
+
+    width: 600px;
+    height: 275px;
+
+    background-color: #AAA;
+
+    padding: 10px;
+    border: 5px solid white;
+    box-shadow: 0 0 30px #000;
+
+    font: bold 21pt arial,sans-serif;
+    color: white;   
+    text-align: center;
+}
+
+#tutorial-instructions {
+
+    font: 12pt courier;
+    line-height: normal;
+    text-align: left;
+}
+
+#tutorial-button { /*button that hides the pop-up menu*/
+
+    position: relative;
+    top: 10px;
+
+    background-color: #444;
+
+    border: 3px solid white;
+    border-radius: 0px;
+
+    font: bold 18pt arial,sans-serif;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+#tutorial-button:hover {
+
+    background-color: white;
+
+    color: #444;
+}
+
+#zoom-lightbox { /*---placeholder---*/ }
+
+#zoom-content {
+
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+}
+
+#zoomGraph {
+
+    border: 5px solid black;
+}
+
+.zoom-button {
+
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+
+    background-color: white;
+
+    border: 3px solid #444;
+    border-radius: 0px;
+    outline: none;
+
+    font: bold 18pt arial,sans-serif;
+    color: #444;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+.zoom-button:hover {
+
+    background-color: #444;
+    color: white;
+}
+
+#zoomtip {
+
+    width: 150px;
+
+    position: absolute;
+    top: 0;
+    right: -165px;
+
+    text-align: left;
+
+    font: bold 12pt arial,sans-serif;
+    color: black;
+
+}
+
+/*input*/
+.ui-slider { 
+     
+    background: transparent;
+
+    border: 0px;
+    border-radius: 0px;
+
+    cursor: pointer;
+}
+
+.ui-slider-vertical .ui-slider-handle {
+
+    background: black;
+
+    height: 7px;
+
+    outline: none;
+    border-radius: 0px;
+
+    cursor: n-resize;
+}
+
+#wveLngthSlider.ui-slider-vertical .ui-slider-handle {
+
+    margin-bottom: -3.5px;
+}
+
+#tempSlider {
+
+    width: 25px;
+    height: 355px;
+
+    position: absolute;
+    top: -5px;
+    left: -85px;
+}
+
+#tempBauble {
+
+    width: 51px;
+    height: 51px;
+
+    border-radius: 100%;
+    background-color: red;
+
+    position: absolute;
+    bottom: 5px;
+    left: -98px;
+}
+
+#tempSlider.ui-slider .ui-slider-handle {
+
+    width: 25px; 
+    height: 15px; 
+    opacity: 0;
+}
+
+#tempSlider.ui-slider .ui-slider-range { 
+
+    background: red; 
+    border-radius: 0;
+}
+
+#wveLngthSlider {
+
+    width: 15px;
+    height: 382px;
+
+    position: absolute;
+    top: -5px;
+    left: 0px;
+
+    z-index: 1;
+}
+
+/*tooltips*/
+.temptip {
+
+    width: 95px;
+
+    position: absolute;
+    left: -200px;
+
+    font: bold 12pt arial,sans-serif;
+    color: red;
+    text-align: right;
+}
+
+.pcnttip {
+
+    width: 45px;
+
+    position: absolute;
+
+    left: -55px;
+
+    font: bold 12pt arial,sans-serif;
+    color: black;
+    text-align: right;    
+}
+
+.wvetip_upr, .wvetip_lwr {
+
+    width: 150px;
+
+    position: absolute;
+
+    left: 75px;
+
+    font: bold 12pt arial,sans-serif;
+    color: black;
+    text-align: left;
+}
+
+/*footer*/
+footer {
+
+    width: 100%;
+
+    position: fixed;
+    bottom: 10px;
+
+    z-index: 3;
+
+    font: bold 14pt arial,sans-serif;
+    color: #CCC;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+footer:hover {
+
+    bottom: 15px;
+
+    color: #888;
+}

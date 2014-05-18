@@ -1,0 +1,81 @@
+<!DOCTYPE html
+<head>
+
+    <meta charset="utf-8">
+
+    <title> Blackbody Calculator </title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="styles/desktop.css" >
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript"> // HIDE LIGHTBOX BEFORE IT LOADS
+            $( function () { $( "#zoom-lightbox" ).hide(); });
+    </script>
+
+</head>
+
+<body>
+
+    <section id="tutorial-lightbox" class="centerVert background fill-screen">
+        <div id="tutorial-content">
+            BLACKBODY RADIATION DEMO
+                <ul id="tutorial-instructions">
+                    <li> Click on the thermometer to set the temperature (K). </li>
+                    <li> The graph will change, showing what distribution of light spectra are emitted from a perfect <a target="_blank" href="http://en.wikipedia.org/wiki/Black_body">blackbody</a> at that temperature. </li>
+                    <li> Use the black sliders to select a range of wavelengths (nm). </li>
+                </ul>
+
+                <span style="font: 12pt courier;">NOTE: The graph you see here is <a target="_blank" href="http://en.wikipedia.org/wiki/Logarithmic_scale">logarithmically scaled</a>. When you select a range of wavelengths, click ZOOM to see a linearly scaled section of the graph.</span>
+
+            <button id="tutorial-button" class="center">OK, GOT IT</button> 
+        </div>
+    </section>
+
+    <section id="zoom-lightbox" class="centerVert background fill-screen">
+        <div id="zoom-content">
+
+            <div id="zoomtip"></div>
+
+            <canvas id="zoomGraph" width="500" height="500">
+
+                Your browser doesn't support HTML5 Canvas!
+
+            </canvas>
+
+            <button class="zoom-button">HIDE</button>
+        </div>
+    </section>
+
+    <section class='centerVert' style="position:relative;">
+
+        <div id='content-wrapper'>  
+
+            <canvas id="spectraGraph" width="400" height="300">
+
+                Your browser doesn't support HTML5 canvas. :C
+
+            </canvas>
+
+            <div id="tempBauble"></div>
+
+            <div id="tempSlider"></div>
+            <div id="wveLngthSlider"></div>
+
+            <div class="temptip"></div>
+            <div id="pcnttip" class="pcnttip"></div>
+            <div class="wvetip_upr"></div>
+            <div class="wvetip_lwr"></div>
+
+            <button class="zoom-button hidden">ZOOM</button>
+        </div>
+
+    </section>
+
+    <footer class="center">/ D A . N I E L L A C O S . S E / </footer>
+
+    <script type="text/javascript" src="scripts/lib.js"></script>
+    <script type="text/javascript" src="scripts/jqsiaf.js"></script>
+
+</body>
