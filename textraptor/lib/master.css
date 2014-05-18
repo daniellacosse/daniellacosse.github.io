@@ -69,7 +69,6 @@ section {
 textarea { resize: none; }
 
 .textarea {
-
   width: 320px;
   height: 450px;
 
@@ -81,18 +80,11 @@ textarea { resize: none; }
   padding: 5px;
 
   outline: 0;
-
 }
 
-#area0 { background-color: #3a320e; }
-#area1 { background-color: #6d1a1a; }
-#area2 { background-color: #19567a; }
-
 canvas {
-
   position: absolute;
   top: 15px;
-
 }
 
 #stats {

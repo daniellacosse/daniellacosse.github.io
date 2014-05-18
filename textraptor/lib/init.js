@@ -26,8 +26,12 @@ $(function(){
   })
 
   $("#addText").on("click", function(){
+    var newId = $("textarea").length - 1
 
-    console.log($("textarea:visible").length);
+    $("#library").append(/* new text area */).attr("data-id", newId)
+
+    $(".textarea").transition({height:}, 300, "ease");
+
 
     if ($("textarea:visible").length === 1) {
 
