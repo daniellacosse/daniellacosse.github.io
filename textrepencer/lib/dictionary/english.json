@@ -1,28 +1,35 @@
-window.DICTIONARY = { //json?
+{
+
+  "parts_of_speech": [
+    "nouns", "pronouns", "adjectives", "verbs",
+    "adverbs", "articles", "prepositions", "conjunctions",
+    "interjections"
+  ],
+
   "nouns": {},
 
   "pronouns": {
     "singular": {
-      "personal": new Set([
+      "personal": [
         "i", "me", "you", "he", "him", "she", "her", "it"
-      ]),
-      "demonstrative": new Set([
+      ],
+      "demonstrative": [
         "that", "this"
-      ]),
-      "posessive": new Set([
+      ],
+      "posessive": [
         "mine", "yours", "his", "hers"
-      ])
+      ]
     },
     "plural": {
-      "personal": new Set([
+      "personal": [
         "we", "us", "they", "them"
-      ]),
-      "demonstrative": new Set([
+      ],
+      "demonstrative": [
         "those", "these"
-      ]),
-      "posessive": new Set([
+      ],
+      "posessive": [
         "ours", "yours", "theirs"
-      ])
+      ]
     }
   },
 
@@ -38,21 +45,21 @@ window.DICTIONARY = { //json?
 
   "articles": {
     "definite": "the",
-    "indefinite": new Set([
+    "indefinite":  [
       "a", "an", "some"
-    ])
-  }
-
-  "prepositions": new Set(),
-
-  "conjunctions": {
-    "coordinating": new Set([
-      "and", "but", "or", "nor", "for", "yet", "so"
-    ]),
-    "subordinating": new Set([
-       "although", "because", "since", "unless"
-    ])
+    ]
   },
 
-  "interjections": new Set()
+  "prepositions": [],
+
+  "conjunctions": {
+    "coordinating":  [
+      "and", "but", "or", "nor", "for", "yet", "so"
+    ],
+    "subordinating":  [
+       "although", "because", "since", "unless"
+    ]
+  },
+
+  "interjections": []
 }

@@ -1,13 +1,14 @@
-var library = [ // need library & text objects
-  {avgPcnt: 0, stdDev: 0, color: "#3a320e"},
-  {avgPcnt: 0, stdDev: 0, color: "#6d1a1a"},
-  {avgPcnt: 0, stdDev: 0, color: "#19567a"}
-]
+var library = new Library({
+  "texts": [ // need library & text objects
+    new Text({avgPcnt: 0, stdDev: 0, color: "#3a320e"}),
+    new Text({avgPcnt: 0, stdDev: 0, color: "#6d1a1a"}),
+    new Text({avgPcnt: 0, stdDev: 0, color: "#19567a"})
+  ]
+}),
 
-var gaussianCanv = document.getElementById("gaussianCanv");
-var ctx = gaussianCanv.getContext("2d");
-
-var xScale = 0, yScale = 1;
+  gaussianCanv = document.getElementById("gaussianCanv"),
+  ctx = gaussianCanv.getContext("2d"),
+  xScale = 0, yScale = 1;
 
 $(function(){
 
