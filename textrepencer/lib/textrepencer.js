@@ -1,4 +1,4 @@
-var library = [
+var library = [ // need library & text objects
   {avgPcnt: 0, stdDev: 0, color: "#3a320e"},
   {avgPcnt: 0, stdDev: 0, color: "#6d1a1a"},
   {avgPcnt: 0, stdDev: 0, color: "#19567a"}

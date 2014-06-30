@@ -1,4 +1,4 @@
-window.DICTIONARY = {
+window.DICTIONARY = { //json?
   "nouns": {},
 
   "pronouns": {
