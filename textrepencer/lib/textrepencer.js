@@ -1,38 +1,54 @@
-var library = new Library({
-  "texts": [ // need library & text objects
-    new Text({avgPcnt: 0, stdDev: 0, color: "#3a320e"}),
-    new Text({avgPcnt: 0, stdDev: 0, color: "#6d1a1a"}),
-    new Text({avgPcnt: 0, stdDev: 0, color: "#19567a"})
-  ]
-}),
+///\\\///\\\ GLOBALS ///\\\///\\\
 
-  gaussianCanv = document.getElementById("gaussianCanv"),
-  ctx = gaussianCanv.getContext("2d"),
-  xScale = 0, yScale = 1;
+LIBRARY = new Library();
 
-$(function(){
+///\\\///\\\ INITIALIZE ///\\\///\\\
+
+$(document).ready(function(){
 
   setupCanvas();
 
   $(".textarea").on("input propertychange", function(event) {
-    var id = $(event.target).attr("data-id")
-    var text = library[id]
+    var id = $(event.target).attr("data-id"),
+        text = library[id]
 
     text.wrdCnt = countWordsFrom(id, text.color);
     text.avgPcnt = avgPercent(text.wrdCnt);
     text.stdDev = stdDev(text.wrdCnt);  //average operation duplication
 
-    updateStats();
-    updateGaussianCanv();
+    // updateStats();
+
+    // function updateStats(){
+    //
+    //   document.getElementById("stats").innerHTML="";
+    //
+    //   var arr = [];
+    //   arr.length = 0;
+    //
+    //   for (var i = 0; i < library.length; i++) arr.push.apply(arr, library[i].wrdCnt);
+    //   arr.sort(function(x, y){ return y.percent - x.percent; });
+    //
+    //   for (var i = 0; i < arr.length; i++){ //displays all the word prevalences in order by percentage
+    //
+    //     document.getElementById("stats").innerHTML += ("<span style='color: " + arr[i].color + ";'><strong>" + arr[i].word + "</strong>&emsp;&emsp;&emsp;" + precise_round(arr[i].percent, 2) + "% </span><br />");
+    //
+    //   };
+    //
+    // }
+
+    update_canv();
   })
 
   $("#addText").on("click", function(){
+    LIBRARY.add_text({
+
+    })
+
     var newId = $("textarea").length - 1
 
     $("#library").append(/* new text area */).attr("data-id", newId)
 
-    $(".textarea").transition({height:}, 300, "ease");
-
+  $(".textarea").transition({height: /* new height */}, 300, "ease");
 
     if ($("textarea:visible").length === 1) {
 
